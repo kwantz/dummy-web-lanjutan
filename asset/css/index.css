@@ -1,0 +1,49 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+#menu {
+  top: 0;
+  bottom:0;
+  width: 20%;
+  position:fixed;
+  overflow-y:scroll;
+  overflow-x:hidden;
+  padding-left: 20px;
+}
+
+#menu ul,
+#menu ol {
+  padding-left: 20px;
+}
+
+#content {
+  float: right;
+  width: 75%;
+}
+
+#content img {
+  width: 100%;
+}
+
+#content pre {
+  color: #a5cee1;
+  background: #2B3A42;
+  border-radius: 3px;
+  padding: 8px 16px;
+  overflow-x: scroll;
+}
+
+#content pre.inline {
+  display: inline;
+}
+
+#content pre span.success {
+  color: #9df29d;
+}
+
+#content pre span.error {
+  color: #f79494;
+}

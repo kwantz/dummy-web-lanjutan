@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="asset/css/index.css" rel="stylesheet">
+  </head>
+  <body>
+    <ol id="menu">
+      <li>Konsep pada Webpack</li>
+      <li>Entry Point</li>
+      <li>Output</li>
+      <li>Loader</li>
+      <li>Plugin</li>
+      <li>Mode</li>
+      <li>Konfigurasi
+        <ul>
+          <li>Konfigurasi Sederhana</li>
+          <li>Konfigurasi dengan Multi Target</li>
+          <li>Konfigurasi menggunakan Bahasa Pemrograman lain</li>
+        </ul>
+      </li>
+      <li>Module</li>
+      <li>Hot Module Replacement</li>
+    </ol>
+
+    <div id="content">
+      <h2>1.9 Hot Module Replacement</h2>
+      <p>Hot Module Replacement (HMR) bertujuan untuk bertukar, menambah, ataupun menghapus modul saat aplikasi sedang dijalankan tanpa melakukan reload secara berulang-ulang. Secara signifikan, dapat mempercepat developer dalam melakukan pengembangan seperti:</p>
+      <ul>
+        <li>Tetap mempertahankan aplikasi selama reload dilakukan</li>
+        <li>Menghemat waktu pengembangan dengan memperbarui hanya pada bagian yang diubah</li>
+        <li>Styling lebih cepat</li>
+      </ul>
+      <p>Langkah-langkah yang memungkinkan modul untuk bertukar masuk dan keluar dari aplikasi:</p>
+      <ul>
+        <li>Aplikasi akan meminta runtime HMR untuk memeriksa pembaruan</li>
+        <li>Runtime secara asynchronous mengambil pembaruan dan memberitahu aplikasi</li>
+        <li>Aplikasi kemudian meminta runtime untuk menerapkan pembaruan</li>
+        <li>Runtime secara synchronous menerapkan pembaruan</li>
+      </ul>
+      <p>Kita dapat mengatur HMR agar dapat melakukan proses secara otomatis, ataupun dapat memilih untuk meminta interaksi dari developer agar pembaruan terjadi.</p>
+      <p>Selain melakukan asset secara normal, compiler perlu diberitahu agar memungkinkan melakukan pembaruan dari versi sebelumnya ke versi yang baru. Pembaruan tersebut terdiri dari dua bagian:</p>
+      <ul>
+        <li>Manifest yang diperbarui (JSON)</li>
+        <li>Satu atau beberapa modul yang diperbarui (JavaScript)</li>
+      </ul>
+      <p>Manifest berisi kumpulan kompilasi baru dan daftar semua modul yang diperbarui. Masing-masing modul berisi kode baru untuk semua modul yang diperbarui (atau ditambah penanda/flag yang menunjukkan bahwa modul telah dihapus). Compiler memastikan bahwa ID modul sebelumnya dengan ID modul yang baru konsisten. ID modul akan disimpan di memori, tetapi juga bisa disimpan dalam sebuah file JSON.</p>
+      <p>HMR adalah fitur opt-in yang hanya mempengaruhi modul yang berisi kode HMR. Salah satu contohnya adalah mem-patch styling melalui style-loader. Agar patch berfungsi, style-loader mengimplementasikan antarmuka HMR. Ketika menerima pembaruan melalui HMR, maka modul yang lama akan digantikan dengan yang baru.</p>
+      <p>Ketika mengimplementasikan antarmuka HMR dalam modul, kita dapat menjelaskan apa yang seharusnya terjadi jika sebuah modul diperbarui. Namun, dalam kebanyakan kasus, tidak wajib untuk menulis kode HMR di setiap modul. Jika modul tidak memiliki handler HMR, maka pembaruan akan mengalami bubble up. Ini berarti bahwa satu handler dapat memperbarui module tree secara lengkap. Jika satu modul dari module tree diperbarui, seluruh rangkaian dependensi akan dimuat ulang.</p>
+      <p>HMR dapat digunakan dalam pengembangan aplikasi sebagai pengganti dari LiveReload. webpack-dev-server mendukung hot mode yang mencoba memperbarui dengan HMR sebelum mencoba untuk me-reload seluruh halaman. Yang perlu dilakukan hanyalah memperbarui konfigurasi webpack-dev-server dan menggunakan webpack yang dibangun di dalam plugin HMR. Sebelum memulai membuat aplikasi, install terlebih dahulu:<br><code>npm install webpack webpack-cli webpack-dev-server --save-dev</code></p>
+      <p>Struktur folder project kita akan menjadi seperti:</p>
+      <pre id="pre-struktur-folder"></pre>
+      <pre id="pre-package.json"></pre>
+      <pre id="pre-webpack.config.js-1"></pre>
+      <pre id="pre-index.html"></pre>
+      <pre id="pre-index.js-1"></pre>
+
+      <p>Kemudian jalankan perintah <code>npm run start:dev</code>, sehingga hasilnya akan menjadi:</p>
+      <pre id="pre-start-dev-1"></pre>
+
+      <p>Aplikasi akan berjalan pada halaman browser dengan url <code>http://localhost:8080/</code> dimana tampilannya akan menjadi seperti ini:</p>
+      <img src="asset/img/ss-1.png">
+
+      <p>Mari kita tambah sedikit kata pada <code>src/index.js</code>:</p>
+      <pre id="pre-index.js-2"></pre>
+
+      <p>Pada terminal / command prompt:</p>
+      <pre id="pre-start-dev-2"></pre>
+
+      <p>Kemudian kita lihat kembali di browser, tanpa kita melakukan refresh, maka tampilan nya akan berubah menjadi:</p>
+      <img src="asset/img/ss-2.png">
+
+      <p>Kita juga dapat menggunakan HMR pada stylesheet css, dengan caranya adalah install terlebih dahulu <br><code>npm install --save-dev style-loader css-loader</code>, lalu edit file dengan beberapa tambahan berikut:</p>
+      <pre id="pre-webpack.config.js-2"></pre>
+      <pre id="pre-index.js-3"></pre>
+      <pre id="pre-index.css-1"></pre>
+
+      <p>Jalankan perintah npm run start:dev dan buka browser dan ketik <code>http://localhost:8080</code></p>
+      <img src="asset/img/ss-3.png">
+
+      <p>Lalu, kita edit file src/index.css dengan mengganti warna latarnya menjadi warna kuning:</p>
+      <pre id="pre-index.css-2"></pre>
+      <img src="asset/img/ss-4.png">
+    </div>
+  </body>
+
+  <script src="asset/js/convert-html-to-text.js"></script>
+  <script src="asset/js/pre-index.js"></script>
+</html>
