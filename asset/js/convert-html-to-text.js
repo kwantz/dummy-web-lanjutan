@@ -20,5 +20,6 @@ function convertHtmlToText(text) {
     }
   }
 
+  if (color != '') temp += color + '</span>\n'
   return temp
 }

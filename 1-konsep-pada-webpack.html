@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="asset/css/index.css" rel="stylesheet">
+  </head>
+  <body>
+    <ol id="menu">
+      <a href="index.html">
+        <h1>Zro2iro</h1>
+      </a>
+      <a href="1-konsep-pada-webpack.html">
+        <li>&gt; &nbsp; Konsep pada Webpack</li>
+      </a>
+      <a href="2-contoh-penggunaan-webpack.html">
+        <li>&gt; &nbsp; Contoh pada Webpack</li>
+      </a>
+      <a href="hot-module-replacement.html">
+        <li>&gt; &nbsp; Hot Module Replacement</li>
+      </a>
+      <li>Entry Point</li>
+      <li>Output</li>
+      <li>Loader</li>
+      <li>Plugin</li>
+      <li>Mode</li>
+      <li>Konfigurasi
+        <ul>
+          <li>Konfigurasi Sederhana</li>
+          <li>Konfigurasi dengan Multi Target</li>
+          <li>Konfigurasi menggunakan Bahasa Pemrograman lain</li>
+        </ul>
+      </li>
+      <li>Module</li>
+    </ol>
+
+    <div id="content">
+      <h2>1. Konsep pada Webpack</h2>
+      <p>Webpack adalah pembundel modul statis untuk aplikasi JavaScript modern. Ketika webpack memproses aplikasi, secara internal dibuat grafik ketergantungan yang memetakan setiap modul yang dibutuhkan proyek tersebut dan menghasilkan satu atau lebih bundel. Sejak versi 4, webpack tidak memerlukan file konfigurasi untuk membundel proyek, namun dapat dikonfigurasi untuk disesuaikan dengan kebutuhan kita. Ada beberapa konsep inti dari webpack yaitu :</p>
+
+      <h3>Entry</h3>
+      <p>Entry point menunjukkan modul webpack mana yang harus digunakan untuk mulai membangun grafik ketergantungan internal, webpack akan mencari tahu modul dan library lain yang mana titik masuk bergantung (secara langsung maupun tidak langsung). Secara default, nilainya adalah <code>./src/index.js</code>, tapi kita dapat menentukan yang lain (atau banyak entry point) dengan mengkonfigurasi properti entry di konfigurasi webpack seperti :</p>
+      <pre id="pre-entry"></pre>
+      <p>Contoh di atas menunjukkan bahwa kita dapat menentukan entry point selain default yaitu <code>my_entry.js</code> pada folder testing.</p>
+
+      <h3>Output</h3>
+      <p>Properti output memberitahu webpack di mana untuk meletakkan bundel yang dibuatnya dan bagaimana menamai file-file tersebut, yang secara default <code>./dist/bundle.js</code> adalah file output utama dan folder <code>./dist</code> sebagai tempat file lain dihasilkan. Kita dapat mengkonfigurasi bagian proses ini dengan menentukan bagian output pada file konfigurasi :</p>
+      <pre id="pre-output"></pre>
+      <p>Pada contoh di atas, kita menentukan nama file bundel keluaran yaitu <code>first_bundle.js</code> dengan lokasi yaitu folder dist.</p>
+
+      <h3>Loader</h3>
+      <p>Berbeda dengan yang lain, webpack hanya memahami file JavaScript. Loader memungkinkan webpack untuk memproses jenis file lain dan mengubahnya menjadi modul valid yang dapat dikonsumsi oleh aplikasi kita dan ditambahkan ke grafik dependensi. Sebagai catatan, kemampuan untuk mengimpor semua jenis modul misalnya file <code>.css</code> adalah fitur khusus dari webpack dan mungkin tidak dimiliki oleh bundler lainnya. Pada penggunaan lebih lanjut, Loader memiliki dua fungsi dalam konfigurasi webpack:</p>
+      <ul>
+        <li>Properti <code>test</code> untuk mengidentifikasi file-file mana yang harus diubah.</li>
+        <li>Properti <code>use</code> untuk menunjukkan loader mana yang harus digunakan untuk melakukan pengubahan/transformasi.</li>
+      </ul>
+      <pre id="pre-loader"></pre>
+      <p>Penentuan rules pada module berfungsi untuk memberitahu compiler webpack ketika menemui sebuah path yang merujuk ke sebuah file <code>.css</code> di dalam statement <code>require()</code> / <code>import</code>, gunakan <code>css-loader</code> untuk mengubah sebelum menambahkannya ke dalam bundel.</p>
+
+      <h3>Plugin</h3>
+      <p>Sementara loader digunakan untuk mengubah jenis modul tertentu, plugin dapat dimanfaatkan untuk melakukan berbagai tugas yang lebih luas, mulai dari optimisasi bundel, manajemen aset ataupun menyuntikkan variabel lingkungan. Untuk menggunakan plugin, harus di <code>require()</code> dan tambahkan ke array plugin. Kebanyakan plugin dapat disesuaikan melalui opsi. Karena sebuah plugin dapat digunakan beberapa kali dalam sebuah konfigurasi untuk tujuan yang berbeda, kita perlu membuat turunannya dengan menggunakan operator <code>new</code>.</p>
+      <pre id="pre-plugin"></pre>
+      <p>Dari contoh di atas, plugin akan menghasilkan sebuah file html dari aplikasi yang secara otomatis menyuntikkan semua bundel yang dihasilkan.</p>
+
+      <h3>Mode</h3>
+      <p>Dengan mengatur parameter mode baik untuk <code>development</code>, <code>production</code> atau <code>none</code>, kita dapat mengaktifkan pengoptimalan bawaan webpack yang sesuai dengan setiap lingkungan. Nilai default adalah <code>production</code>.</p>
+      <pre id="pre-mode"></pre>
+    </div>
+  </body>
+
+  <script src="asset/js/convert-html-to-text.js"></script>
+  <script src="asset/js/1-konsep-pada-webpack.js"></script>
+</html>

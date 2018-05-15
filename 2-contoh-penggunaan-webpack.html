@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="asset/css/index.css" rel="stylesheet">
+  </head>
+  <body>
+    <ol id="menu">
+      <a href="index.html">
+        <h1>Zro2iro</h1>
+      </a>
+      <a href="1-konsep-pada-webpack.html">
+        <li>&gt; &nbsp; Konsep pada Webpack</li>
+      </a>
+      <a href="2-contoh-penggunaan-webpack.html">
+        <li>&gt; &nbsp; Contoh pada Webpack</li>
+      </a>
+      <a href="hot-module-replacement.html">
+        <li>&gt; &nbsp; Hot Module Replacement</li>
+      </a>
+      <li>Entry Point</li>
+      <li>Output</li>
+      <li>Loader</li>
+      <li>Plugin</li>
+      <li>Mode</li>
+      <li>Konfigurasi
+        <ul>
+          <li>Konfigurasi Sederhana</li>
+          <li>Konfigurasi dengan Multi Target</li>
+          <li>Konfigurasi menggunakan Bahasa Pemrograman lain</li>
+        </ul>
+      </li>
+      <li>Module</li>
+    </ol>
+
+    <div id="content">
+      <h2>2. Contoh pada Webpack</h2>
+      <p>Sebelum memulai, pastikan sudah menginstall <a href="https://nodejs.org/en/">Node.js</a>. Jika sudah menginstall Node.js, maka buat sebuah folder project baru, masuk kedalam project tersebut dan initialisasi npm.</p>
+      <pre id="pre-command-1"></pre>
+      <p>Kemudian install webpack kedalam project</p>
+      <pre id="pre-command-2"></pre>
+      <p>Lalu buat sebuah file baru <code>webpack.config.js</code> untuk mengatur webpack yang kita inginkan dengan menggunakan mode <code>development</code>, dan <code>index.html</code> yang akan dimasukkan kedalam folder <code>./dist</code>. Sehingga folder structure akan menjadi seperti ini:</p>
+      <pre id="pre-folder-1"></pre>
+      <pre id="pre-webpack-1"></pre>
+      <pre id="pre-index-html-1"></pre>
+      <p>Buka aplikasi browser dan ketik url <code>http://localhost/webpack-project/dist/index.html</code>, maka akan muncul tampilan:</p>
+      <img src="asset/img/2-contoh-penggunaan-webpack-1.png">
+
+      <h3>JavaScript</h3>
+      <p>Sekarang, kita akan memasukkan file <code>index.js</code> kedalam project yang dimasukan kedalam folder <code>dist</code>, dan <code>index.html</code> akan menggunakan file tersebut. Sehingga folder structure akan menjadi seperti ini:</p>
+      <pre id="pre-folder-2"></pre>
+      <pre id="pre-index-js-1"></pre>
+      <pre id="pre-index-html-2"></pre>
+      <p>Dan hasilnya akan seperti ini,</p>
+      <img src="asset/img/2-contoh-penggunaan-webpack-2.png">
+
+      <p>Mari kita pindahkan <code>index.js</code> dari <code>dist</code> ke <code>src</code>. <i>(Loh, kalau begitu bukannya <code>index.js</code> tidak bisa terbaca?)</i> Untuk itulah kita minta bantuan webpack. Tetapi sebelum dimulai penggunaan webpack, tambahkan <code>script</code> pada <code>package.json</code> terlebih dahulu dan pindahkan <code>index.js</code> kedalam <code>src</code>.</p>
+      <pre id="pre-package-json"></pre>
+      <pre id="pre-folder-3"></pre>
+
+      <p>Tambahkan <code>entry</code> yang menunjuk ke <code>src/index.js</code> pada webpack lalu jalankan perintah <code>npm run build</code>:</p>
+      <pre id="pre-webpack-2"></pre>
+      <pre id="pre-terminal-1"></pre>
+
+      <p><i>(Wah, ada file baru didalam <code>dist</code>, tapi kok <code>main.js</code>?)</i> Oops... Mari kita tambah beberapa settingan lagi didalam webpack, yaitu <code>output</code> lalu jalankan perintah <code>npm run build</code> sekali lagi.</p>
+      <pre id="pre-webpack-3"></pre>
+      <pre id="pre-terminal-2"></pre>
+
+      <p><i>(Yeay, sudah berhasil!)</i> Mari kita lihat hasil kompilasi dari webpack untuk mode <code>development</code>.</p>
+      <pre id="pre-index-js-2"></pre>
+      <p>Dan ini adalah hasil kompilasi dari webpack untuk mode <code>none</code> dan <code>production</code>.</p>
+      <pre id="pre-index-js-3"></pre>
+      <pre id="pre-index-js-4"></pre>
+    </div>
+  </body>
+
+  <script src="asset/js/convert-html-to-text.js"></script>
+  <script src="asset/js/2-contoh-penggunaan-webpack.js"></script>
+</html>

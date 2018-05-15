@@ -9,6 +9,8 @@ webpack-demo
 `)
 
 document.getElementById('pre-package.json').innerHTML = convertHtmlToText(`
+// package.json
+
   {
     "name": "belajar-webpack",
     "version": "1.0.0",
@@ -34,6 +36,8 @@ document.getElementById('pre-package.json').innerHTML = convertHtmlToText(`
 `)
 
 document.getElementById('pre-webpack.config.js-1').innerHTML = convertHtmlToText(`
+// webpack.config.js
+
   const path = require('path')
 + const webpack = require('webpack')
 
@@ -62,6 +66,8 @@ document.getElementById('pre-webpack.config.js-1').innerHTML = convertHtmlToText
 `)
 
 document.getElementById('pre-index.html').innerHTML = convertHtmlToText(`
+// dist/index.html
+
 <!doctype html>
 <html>
   <head>
@@ -70,10 +76,12 @@ document.getElementById('pre-index.html').innerHTML = convertHtmlToText(`
   <body>
     <script src="bundle.js"><\/script>
   </body>
-<\/html>
+</html>
 `)
 
 document.getElementById('pre-index.js-1').innerHTML = convertHtmlToText(`
+// src/index.js
+
 function component() {
   var element = document.createElement('div')
 
@@ -121,6 +129,8 @@ Entrypoint app = bundle.js
 `)
 
 document.getElementById('pre-index.js-2').innerHTML = convertHtmlToText(`
+// src/index.js
+
   function component() {
     var element = document.createElement('div')
 
@@ -150,6 +160,8 @@ Entrypoint app = bundle.js app.28610e5bffd43145ef8b.hot-update.js
 `)
 
 document.getElementById('pre-webpack.config.js-2').innerHTML = convertHtmlToText(`
+// webpack.config.js
+
   const path = require('path')
   const webpack = require('webpack')
 
@@ -187,6 +199,8 @@ document.getElementById('pre-webpack.config.js-2').innerHTML = convertHtmlToText
 `)
 
 document.getElementById('pre-index.js-3').innerHTML = convertHtmlToText(`
+// src/index.js
+
 + import './index.css'
 
   function component() {
@@ -201,6 +215,8 @@ document.getElementById('pre-index.js-3').innerHTML = convertHtmlToText(`
 `)
 
 document.getElementById('pre-index.css-1').innerHTML = convertHtmlToText(`
+// src/index.css
+
   body {
     background: cyan;
     font-weight: bold;
@@ -208,6 +224,8 @@ document.getElementById('pre-index.css-1').innerHTML = convertHtmlToText(`
 `)
 
 document.getElementById('pre-index.css-2').innerHTML = convertHtmlToText(`
+// src/index.css
+
   body {
 -   background: cyan;
 +   background: yellow;

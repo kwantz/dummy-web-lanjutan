@@ -1,7 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
   max-width: 1260px;
-  margin: 0 auto;
 }
 
 #menu {
@@ -9,9 +8,34 @@ body {
   bottom:0;
   width: 20%;
   position:fixed;
+  padding-left: 0;
+  list-style: none;
   overflow-y:scroll;
   overflow-x:hidden;
-  padding-left: 20px;
+  margin: 0 0 0 -8px;
+  background-color: #6c757d;
+}
+
+#menu a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#menu h1 {
+  margin: 0;
+  padding-top: 15px;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+#menu li {
+  padding: 5px;
+}
+
+#menu li:hover,
+#menu h1:hover {
+  background-color: #007bff;
 }
 
 #menu ul,
@@ -34,6 +58,7 @@ body {
   border-radius: 3px;
   padding: 8px 16px;
   overflow-x: scroll;
+  max-height: 350px;
 }
 
 #content pre.inline {
@@ -46,4 +71,13 @@ body {
 
 #content pre span.error {
   color: #f79494;
+}
+
+code {
+  font-size: 14px;
+}
+
+img {
+  border: 1px solid #2B3A42;
+  border-radius: 5px;
 }
