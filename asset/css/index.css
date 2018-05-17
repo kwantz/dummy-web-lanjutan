@@ -81,3 +81,25 @@ img {
   border: 1px solid #2B3A42;
   border-radius: 5px;
 }
+
+footer a {
+  border: 1px solid #007bff;
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+footer a:hover {
+  color: white;
+  background-color: #007bff;
+}
+
+footer a:nth-child(1) {
+  float: left;
+}
+
+footer a:nth-child(2) {
+  float: right;
+}

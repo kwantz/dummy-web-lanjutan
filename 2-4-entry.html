@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="asset/css/index.css" rel="stylesheet">
+  </head>
+  <body>
+    <ol id="menu">
+      <a href="index.html">
+        <h1>Zro2iro</h1>
+      </a>
+      <a href="1-konsep-pada-webpack.html">
+        <li>&gt; &nbsp; Konsep pada Webpack</li>
+      </a>
+      <a href="2-contoh-penggunaan-webpack.html">
+        <li>&gt; &nbsp; Contoh pada Webpack</li>
+      </a>
+      <a href="hot-module-replacement.html">
+        <li>&gt; &nbsp; Hot Module Replacement</li>
+      </a>
+      <li>Entry Point</li>
+      <li>Output</li>
+      <li>Loader</li>
+      <li>Plugin</li>
+      <li>Mode</li>
+      <li>Konfigurasi
+        <ul>
+          <li>Konfigurasi Sederhana</li>
+          <li>Konfigurasi dengan Multi Target</li>
+          <li>Konfigurasi menggunakan Bahasa Pemrograman lain</li>
+        </ul>
+      </li>
+      <li>Module</li>
+    </ol>
+
+    <div id="content">
+      <h3>Entry</h3>
+
+      <p>
+        Jika ingin lebih dari satu file <code>.js</code>,
+        kita dapat menggunakan <i>multiple entry point</i> dengan catatan,
+        penamaan file harus unik. Contohnya seperti ini:
+      </p>
+
+      <pre id="pre-js-1"></pre>
+      <pre id="pre-webpack-1"></pre>
+      <pre id="pre-terminal-1"></pre>
+
+      <p>
+        Pada <code>output</code>, kita hanya perlu mengganti <code>filename</code> dengan <code>[name]</code>
+        dan webpack akan membuat semua file yang ada didalam <code>entry</code> sesuai dengan penamaan.
+        Sehingga hasilnya akan seperti ini:
+      </p>
+
+      <pre id="pre-folder-1"></pre>
+      <pre id="pre-html-1"></pre>
+      <img src="asset/img/2-contoh-penggunaan-webpack-3.png">
+
+      <p>
+        (<i>Apa yang terjadi jika mengubah nama file pada <code>entry</code> atau bahkan menambah file baru? <code>./dist/index.html</code> harus di edit lagi dong.</i>)
+        Wah... pertanyaan yang bagus sekali. Mari kita gunakan plugin <code>HtmlWebpackPlugin</code>. Silakan tekan tombol <code>Next</code> dibawah untuk melanjutkan.
+      </p>
+
+      <footer>
+        <a href="2-3-output.html">&lt; Prev</a>
+        <a href="2-5-html-webpack-plugin.html">Next &gt;</a>
+      </footer>
+    </div>
+  </body>
+
+  <script src="asset/js/convert-html-to-text.js"></script>
+  <script src="asset/js/2-4-entry.js"></script>
+</html>

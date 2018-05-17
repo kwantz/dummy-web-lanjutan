@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="asset/css/index.css" rel="stylesheet">
+  </head>
+  <body>
+    <ol id="menu">
+      <a href="index.html">
+        <h1>Zro2iro</h1>
+      </a>
+      <a href="1-konsep-pada-webpack.html">
+        <li>&gt; &nbsp; Konsep pada Webpack</li>
+      </a>
+      <a href="2-contoh-penggunaan-webpack.html">
+        <li>&gt; &nbsp; Contoh pada Webpack</li>
+      </a>
+      <a href="hot-module-replacement.html">
+        <li>&gt; &nbsp; Hot Module Replacement</li>
+      </a>
+      <li>Entry Point</li>
+      <li>Output</li>
+      <li>Loader</li>
+      <li>Plugin</li>
+      <li>Mode</li>
+      <li>Konfigurasi
+        <ul>
+          <li>Konfigurasi Sederhana</li>
+          <li>Konfigurasi dengan Multi Target</li>
+          <li>Konfigurasi menggunakan Bahasa Pemrograman lain</li>
+        </ul>
+      </li>
+      <li>Module</li>
+    </ol>
+
+    <div id="content">
+      <h3>HtmlWebpackPlugin</h3>
+
+      <p>Pertama, install plugin ini terlebih dahulu:</p>
+      <pre id="pre-terminal-1"></pre>
+
+      <p>Mari kita buat sesuatu yang simple, seperti membuat <code>title</code>.</p>
+      <pre id="pre-webpack-1"></pre>
+
+      <p>Dan saat kita jalankan <code>npm run build</code>, maka hasil <code>./dist/index.html</code> kita akan menjadi seperti ini:</p>
+      <pre id="pre-html-1"></pre>
+
+      <p>Kita dapat mengubah nama file <code>html</code> yang secara default <code>./dist/index.html</code> dengan menambah attribut <code>filename</code>:</p>
+      <pre id="pre-webpack-2"></pre>
+
+      <p>Kita juga dapat mengubah <code>template</code> yang kita inginkan, lalu tambah attribut <code>template</code> yang mengarah ke template yang telah kita buat.</p>
+      <pre id="pre-html-2"></pre>
+      <pre id="pre-webpack-3"></pre>
+
+      <p>
+        Jika ingin menambah file <code>.html</code> yang baru, cukup menambah <code>new HtmlWebpackPlugin()</code>
+        sesuai yang diinginkan. Contoh dibawah adalah cara membuat lebih dari satu file <code>.html</code> serta
+        bagaimana cara memilih file <code>.js</code> yang diinginkan dalam 1 file <code>.html</code>
+      </p>
+      <pre id="pre-webpack-4"></pre>
+
+      <p>Jalankan perintah <code>npm run build</code> dan hasilnya adalah seperti berikut:</p>
+      <pre id="pre-html-3"></pre>
+      <pre id="pre-html-4"></pre>
+      <pre id="pre-html-5"></pre>
+      <pre id="pre-html-6"></pre>
+
+      <p>Beberapa option yang tersedia pada <code>HtmlWebpackPlugin</code></p>
+      <table>
+        <tr>
+          <th><code>title</code></th>
+          <td><code>title</code> yang digunakan untuk <code>.html</code> yang dibuat.</td>
+        </tr>
+        <tr>
+          <th><code>filename</code></th>
+          <td>nama file <code>.html</code> yang diinginkan. Secara default bernama <code>index.html</code>. Juga dapat digunakan untuk subdirectori (misalnya: <code>asset/admin.html</code>)</td>
+        </tr>
+      </table>
+
+      <footer>
+        <a href="2-4-entry.html">&lt; Prev</a>
+        <a href="2-6-clean-webpack-plugin.html">Next &gt;</a>
+      </footer>
+    </div>
+  </body>
+
+  <script src="asset/js/convert-html-to-text.js"></script>
+  <script src="asset/js/2-5-html-webpack-plugin.js"></script>
+</html>

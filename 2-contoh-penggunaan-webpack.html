@@ -47,31 +47,22 @@
       <p>Buka aplikasi browser dan ketik url <code>http://localhost/webpack-project/dist/index.html</code>, maka akan muncul tampilan:</p>
       <img src="asset/img/2-contoh-penggunaan-webpack-1.png">
 
-      <h3>JavaScript</h3>
-      <p>Sekarang, kita akan memasukkan file <code>index.js</code> kedalam project yang dimasukan kedalam folder <code>dist</code>, dan <code>index.html</code> akan menggunakan file tersebut. Sehingga folder structure akan menjadi seperti ini:</p>
-      <pre id="pre-folder-2"></pre>
-      <pre id="pre-index-js-1"></pre>
-      <pre id="pre-index-html-2"></pre>
-      <p>Dan hasilnya akan seperti ini,</p>
-      <img src="asset/img/2-contoh-penggunaan-webpack-2.png">
 
-      <p>Mari kita pindahkan <code>index.js</code> dari <code>dist</code> ke <code>src</code>. <i>(Loh, kalau begitu bukannya <code>index.js</code> tidak bisa terbaca?)</i> Untuk itulah kita minta bantuan webpack. Tetapi sebelum dimulai penggunaan webpack, tambahkan <code>script</code> pada <code>package.json</code> terlebih dahulu dan pindahkan <code>index.js</code> kedalam <code>src</code>.</p>
-      <pre id="pre-package-json"></pre>
-      <pre id="pre-folder-3"></pre>
 
-      <p>Tambahkan <code>entry</code> yang menunjuk ke <code>src/index.js</code> pada webpack lalu jalankan perintah <code>npm run build</code>:</p>
-      <pre id="pre-webpack-2"></pre>
-      <pre id="pre-terminal-1"></pre>
 
-      <p><i>(Wah, ada file baru didalam <code>dist</code>, tapi kok <code>main.js</code>?)</i> Oops... Mari kita tambah beberapa settingan lagi didalam webpack, yaitu <code>output</code> lalu jalankan perintah <code>npm run build</code> sekali lagi.</p>
-      <pre id="pre-webpack-3"></pre>
-      <pre id="pre-terminal-2"></pre>
 
-      <p><i>(Yeay, sudah berhasil!)</i> Mari kita lihat hasil kompilasi dari webpack untuk mode <code>development</code>.</p>
-      <pre id="pre-index-js-2"></pre>
-      <p>Dan ini adalah hasil kompilasi dari webpack untuk mode <code>none</code> dan <code>production</code>.</p>
-      <pre id="pre-index-js-3"></pre>
-      <pre id="pre-index-js-4"></pre>
+
+
+
+
+
+      <h3>Membersihkan folder <code>./dist</code></h3>
+      <p>(<i>Aku selalu mengikuti panduan yang diberikan, tapi folder <code>./dist</code> saya menjadi kotor sekali, apalagi terdapat file-file yang tidak dibutuhkan.</i>) Mari kita gunakan plugin yang populer ini untuk membersihkan folder yang kita inginkan saat kita melakukan <code>npm run build</code>. Install terlebih dahulu dan lakukan perubahan seperti berikut:</p>
+      <pre id="pre-terminal-5"></pre>
+      <!-- <pre id="pre-webpack-7"></pre> -->
+
+      <h3>Caching</h3>
+      <p>Kita menggunakan <code>webpack</code> untuk memaketkan file-file ke dalam folder <code>./dist</code>. Saat semua file yang ada didalam <code>./dist</code> berjalan pada server, dari sisi client akan mengambil file-file js dan css yang ada dibutuhkan. Karena memakan waktu untuk dapat membuka semua file tersebut, browser menggunakan teknik <code>caching</code> supaya sebuah website berjalan dengan cepat karena kurangnya trafik network yang tidak dibutuhkan. Tetapi bagi para developer, ini merupakan sebuah masalah yang memunculkan sakit kepala (<i>Iya, saya juga sakit kepala karena saat ingin mencoba semua code diatas, saya harus men-clear semua cache yang ada di browser setiap terjadi pergantian code.</i>) Panduan ini berfokus pada konfigurasi yang diperlukan untuk memastikan file yang dihasilkan oleh webpack dapat tetap di-cache kecuali isinya telah berubah.</p>
     </div>
   </body>
 
