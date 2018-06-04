@@ -52,36 +52,40 @@
     </ol>
 
     <div id="content">
-      <h2>2. Contoh pada Webpack</h2>
-
+      <h3>Konfigurasi Bahasa Lain</h3>
       <p>
-        Sebelum memulai, pastikan sudah menginstall <a href="https://nodejs.org/en/">Node.js</a>.
-        Jika sudah menginstall Node.js, maka buat sebuah folder project baru, masuk kedalam
-        project tersebut dan initialisasi npm.
+        Webpack dapat menerima file konfigurasinya ditulis dalam berbagai bahasa pemrograman dan data.
+        Berikut akan ditunjukkan cara menuliskan konfigurasi dalam tiga bahasa berbeda :
       </p>
-      <pre id="pre-command-1"></pre>
 
-      <p>Kemudian install webpack kedalam project</p>
-      <pre id="pre-command-2"></pre>
-
+      <h4>TypeScript</h4>
       <p>
-        Lalu buat sebuah file baru <code>webpack.config.js</code>
-        untuk mengatur webpack yang kita inginkan dengan menggunakan mode
-        <code>development</code>, dan <code>index.html</code> yang akan dimasukkan
-        kedalam folder <code>./dist</code>. Sehingga folder structure akan menjadi seperti ini:
+        Pertama sekali kita harus menginstal dependensinya yaitu <code>npm install --save-dev typescript ts-node @types/node @types/webpack</code>.
+        Setelah itu berikut ialah contoh penulisan file konfigurasi webpack.config.ts:
       </p>
-      <pre id="pre-folder-1"></pre>
-      <pre id="pre-webpack-1"></pre>
-      <pre id="pre-index-html-1"></pre>
-
+      <pre id="pre-typescript-1"></pre>
       <p>
-        Buka aplikasi browser dan ketik url <code>http://localhost/webpack-project/dist/index.html</code>,
-        maka akan muncul tampilan:
+        Setelah itu, kita perlu membuka file tsconfig.json dan mengganti target pada compilerOptions ke ES5
+        dan module yaitu CommonJS (atau hilangkan opsi module). Cara ini lebih singkat dibandingkan cara lain.
       </p>
-      <img src="asset/img/2-contoh-penggunaan-webpack-1.png">
+
+      <h4>CoffeeScript</h4>
+      <p>
+        Sama dengan sebelumnya, kita tetap perlu menginstal dependensi yang dibutuhkan pertama sekali yaitu <code>npm install --save-dev coffee-script</code>.
+        Berikut adalah contoh penulisan file konfigurasi dalam webpack.config.coffee dengan melibatkan penggunaan plugin dan juga loader:
+      </p>
+      <pre id="pre-coffee-1"></pre>
+
+      <h4>Babel dan JSX</h4>
+      <p>
+        Pertama, lakukan instalasi akan babel dengan <code>npm install --save-dev babel-register jsxobj babel-preset-es2015</code>
+        dan pada file <code>.babelrc</code> tuliskan <code>{ "presets": ["es2015"] }</code>.
+        Berikut ialah contoh penulisan konfigurasi webpack dengan penggunaan plugin dalam <code>jsx</code>:
+      </p>
+      <pre id="pre-babel-1"></pre>
     </div>
   </body>
 
   <script src="asset/js/convert-html-to-text.js"></script>
-  <script src="asset/js/2-contoh-penggunaan-webpack.js"></script>
+  <script src="asset/js/7-konfigurasi-bahasa-lain.js"></script>
 </html>

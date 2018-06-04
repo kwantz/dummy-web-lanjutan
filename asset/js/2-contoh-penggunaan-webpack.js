@@ -37,8 +37,3 @@ document.getElementById('pre-index-html-1').innerHTML = convertHtmlToText(`
 +   </body>
 + </html>
 `)
-
-
-document.getElementById('pre-terminal-2').innerHTML = convertHtmlToText(`
-npm install --save-dev clean-webpack-plugin
-`)

@@ -16,22 +16,39 @@
       <a href="2-contoh-penggunaan-webpack.html">
         <li>&gt; &nbsp; Contoh pada Webpack</li>
       </a>
-      <a href="hot-module-replacement.html">
+      <a href="2-1-javascript.html">
+        <li>&nbsp; &nbsp; &nbsp; &gt; &nbsp; Javascript</li>
+      </a>
+      <a href="2-2-mode.html">
+        <li>&nbsp; &nbsp; &nbsp; &gt; &nbsp; Mode</li>
+      </a>
+      <a href="2-3-output.html">
+        <li>&nbsp; &nbsp; &nbsp; &gt; &nbsp; Output</li>
+      </a>
+      <a href="2-4-entry.html">
+        <li>&nbsp; &nbsp; &nbsp; &gt; &nbsp; Entry</li>
+      </a>
+      <a href="3-html-webpack-plugin.html">
+        <li>&gt; &nbsp; HtmlWebpackPlugin</li>
+      </a>
+      <a href="4-clean-webpack-plugin.html">
+        <li>&gt; &nbsp; CleanWebpackPlugin</li>
+      </a>
+      <a href="5-caching.html">
+        <li>&gt; &nbsp; Caching</li>
+      </a>
+      <a href="6-loader.html">
+        <li>&gt; &nbsp; Loader</li>
+      </a>
+      <a href="7-konfigurasi-bahasa-lain.html">
+        <li>&gt; &nbsp; Konfigurasi Bahasa Lain</li>
+      </a>
+      <a href="8-hot-module-replacement.html">
         <li>&gt; &nbsp; Hot Module Replacement</li>
       </a>
-      <li>Entry Point</li>
-      <li>Output</li>
-      <li>Loader</li>
-      <li>Plugin</li>
-      <li>Mode</li>
-      <li>Konfigurasi
-        <ul>
-          <li>Konfigurasi Sederhana</li>
-          <li>Konfigurasi dengan Multi Target</li>
-          <li>Konfigurasi menggunakan Bahasa Pemrograman lain</li>
-        </ul>
-      </li>
-      <li>Module</li>
+      <a href="9-babel-loader.html">
+        <li>&gt; &nbsp; Babel Loader</li>
+      </a>
     </ol>
 
     <div id="content">
@@ -49,10 +66,19 @@
       <p>Dan project structure kita akan menjadi seperti ini:</p>
       <pre id="pre-folder-1"></pre>
 
-      <footer>
-        <a href="2-2-mode.html">&lt; Prev</a>
-        <a href="2-4-entry.html">Next &gt;</a>
-      </footer>
+      <p>Untuk konfigurasi dengan multi entry, kita harus menggunakan penamaan file yang bersifat unik. Ada 4 cara dalam penamaan file, yaitu:</p>
+      <p>1. menggunakan nama entry</p>
+      <pre id="pre-webpack-2"></pre>
+      <pre id="pre-folder-2"></pre>
+      <p>2. menggunakan id internal chunk</p>
+      <pre id="pre-webpack-3"></pre>
+      <pre id="pre-folder-3"></pre>
+      <p>3. menggunakan hash untuk hasil generate</p>
+      <pre id="pre-webpack-4"></pre>
+      <pre id="pre-folder-4"></pre>
+      <p>4. menggunakan hash berdasarkan isi dari tiap chunk</p>
+      <pre id="pre-webpack-5"></pre>
+      <pre id="pre-folder-5"></pre>
     </div>
   </body>
 
