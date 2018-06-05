@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="asset/css/index.css" rel="stylesheet">
+  </head>
+  <body>
+    <ol id="menu">
+      <a href="index.html">
+        <h1>Zro2iro</h1>
+      </a>
+      <a href="1-konsep-pada-webpack.html">
+        <li>&gt; &nbsp; Konsep pada Webpack</li>
+      </a>
+      <a href="2-contoh-penggunaan-webpack.html">
+        <li>&gt; &nbsp; Contoh pada Webpack</li>
+      </a>
+      <a href="2-1-javascript.html">
+        <li>&nbsp; &nbsp; &nbsp; &gt; &nbsp; Javascript</li>
+      </a>
+      <a href="2-2-mode.html">
+        <li>&nbsp; &nbsp; &nbsp; &gt; &nbsp; Mode</li>
+      </a>
+      <a href="2-3-output.html">
+        <li>&nbsp; &nbsp; &nbsp; &gt; &nbsp; Output</li>
+      </a>
+      <a href="2-4-entry.html">
+        <li>&nbsp; &nbsp; &nbsp; &gt; &nbsp; Entry</li>
+      </a>
+      <a href="3-html-webpack-plugin.html">
+        <li>&gt; &nbsp; HtmlWebpackPlugin</li>
+      </a>
+      <a href="4-clean-webpack-plugin.html">
+        <li>&gt; &nbsp; CleanWebpackPlugin</li>
+      </a>
+      <a href="5-caching.html">
+        <li>&gt; &nbsp; Caching</li>
+      </a>
+      <a href="6-loader.html">
+        <li>&gt; &nbsp; Loader</li>
+      </a>
+      <a href="7-konfigurasi-bahasa-lain.html">
+        <li>&gt; &nbsp; Konfigurasi Bahasa Lain</li>
+      </a>
+      <a href="8-hot-module-replacement.html">
+        <li>&gt; &nbsp; Hot Module Replacement</li>
+      </a>
+      <a href="9-babel-loader.html">
+        <li>&gt; &nbsp; Babel Loader</li>
+      </a>
+      <a href="10-fitur-babel.html">
+        <li>&gt; &nbsp; Fitur Babel</li>
+      </a>
+    </ol>
+
+    <div id="content">
+      <h3>9. Babel Loader</h3>
+      <p>Babel Loader berfungsi untuk membantu mentranslate bahasa diatas ES5 kedalam ES5. Untuk menginstalasi, gunakan perintah:</p>
+      <pre id="pre-terminal-1"></pre>
+
+      <h4>Cara Penggunaan</h4>
+      <p>Pada konfigurasi webpack, tambahkan babel-loader ke dalam module seperti contoh dibawah:</p>
+      <pre id="pre-webpack-1"></pre>
+
+      <h4>babel-loader options</h4>
+      <p>Kita dapat melakukan pass options pada loader dengan menggunakan properti <code>options</code></p>
+      <pre id="pre-webpack-2"></pre>
+      <p>
+        Pada babel-loader, tambahkan sebuah object <code>options</code> dengan <code>cacheDirectory</code> bernilai <code>true</code>.
+        Perintah ini memberitahu babel untuk menyimpan hasilnya di cache sehingga nantinya tidak perlu lagi menerjemahkan source code yang sama untuk kedua kalinya.
+      </p>
+
+      <h4>babel-loader Polyfill</h4>
+      <p>Sebelum membahas lebih lanjut mengenai babel-loader polyfill, pada code dibawah ini terdapat script tag yang mengambil Promise polyfill.</p>
+      <pre id="pre-html-1"></pre>
+      <p>
+        Beberapa dari code masih menggunakan ES6 Promise, sehingga beberapa browser lama belum bisa men-support-nya.
+        Dengan adanya polyfill, dapat membantu kita agar code tetap dapat di support oleh browser.
+        Meskipun fungsi dari babel itu sendiri adalah mengkonversi code ES6 menjadi ES5, namun itu tidak berarti fitur yang hilang juga ditambahkan.
+        Oleh karena itu, kita tetap membutuhkan sesuatu untuk mengisi Object yang kosong (mis. Promise). Untuk menginstalasi, gunakan perintah:
+      </p>
+      <pre id="pre-terminal-2"></pre>
+      <p>Library ini akan memberikan semua polyfill, termasuk Promise polyfill. Untuk menggunakannya, tambahkan code dibawah didalamnya sehingga kita memiliki polyfill untuk setiap halamannya.</p>
+      <pre id="pre-js-1"></pre>
+
+      <h4>Troubleshooting</h4>
+      <ul>
+        <li>
+          <h5>babel-loader berjalan lambat</h5>
+          <p>
+            Pastikan anda mengubah file sesedikit mungkin, karena ketika terus menerus mengubah file, maka akan di matching dengan <code>/\.js$\</code>,
+            sehingga akan mengubah folder <code>node_modules</code> atau unwanted source lainnya.
+            Jika anda ingin mengecualikan <code>node_modules</code>, lihatlah pada opsi <code>exclude</code> pada konfigurasi.
+            Anda juga dapat mempercepat babel-loader 2 kali lebih cepat dengan menggunakan opsi <code>cacheDirectory</code>.
+            Ini akan membantu menyimpan perubahan yang anda lakukan di filesystem.
+          </p>
+        </li>
+        <li>
+          <h5>Babel melakukan injecting helpers ke setiap file dan membuat code menjadi besar</h5>
+          <p>
+            Babel menggunakan helpers yang paling minim untuk fungsi yang digunakan pada umumnya.
+            Secara default, ini akan ditambahkan pada setiap file yang membutuhkannya.
+            Anda juga boleh menggunakan <code>babel-runtime</code> sebagai module terpisah untuk menghindari duplikasi.
+            Anda juga dapat melakukan konfigurasi seperti ini untuk meng-nonaktifkan injeksi per file pada babel:
+          </p>
+          <pre id="pre-webpack-3"></pre>
+        </li>
+        <li>
+          <h5>Menerima pesan: 'The node API for babel has been moved to babel-core'</h5>
+          <p>
+            Jika anda menerima pesan seperti ini, itu menandakan bahwa anda telah menginstall babel dan menggunakan <i>short notation loader</i> pada konfigurasi webpack.
+            Webpack kemudian mencoba untuk mengeload package babel. Untuk memperbaikinya, anda harus melakukan uninstall pada package babel dan menginstall <code>babel-cli</code> atau <code>babel-core</code>.
+          </p>
+        </li>
+        <li>
+          <h5>Customized Loader</h5>
+          <p>
+            <code>babel-loader</code> mengekspos sebuah loader-builder utility untuk membantu user menambahkan penanganan pada konfigurasi babel untuk setiap file yang diprosesnya.
+            Method <code>.custom</code> dapat menerima callback yang akan dipanggil dengan <code>instance loader</code> dari babel.
+          </p>
+          <pre id="pre-js-2"></pre>
+          <p><code>customOptions</code> berfungsi untuk memberikan opsi pada loader, memisahkan custom option dengan opsi <code>babel-loader</code>.</p>
+          <p><code>config</code> berfungsi dalam memberikan <code>partialConfig</code> pada babel, mengembalikan option yang harus diteruskan ke <code>babel.transform</code>.</p>
+          <p><code>result</code> berfungsi untuk memberikan result object, mengizinkan loader untuk membuat <code>tweaks</code> tambahan.</p>
+        </li>
+      </ul>
+    </div>
+  </body>
+
+  <script src="asset/js/convert-html-to-text.js"></script>
+  <script src="asset/js/9-babel-loader.js"></script>
+</html>
