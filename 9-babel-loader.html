@@ -87,7 +87,7 @@
       <h4>Troubleshooting</h4>
       <ul>
         <li>
-          <h5>babel-loader berjalan lambat</h5>
+          <h4>babel-loader berjalan lambat</h4>
           <p>
             Pastikan anda mengubah file sesedikit mungkin, karena ketika terus menerus mengubah file, maka akan di matching dengan <code>/\.js$\</code>,
             sehingga akan mengubah folder <code>node_modules</code> atau unwanted source lainnya.
@@ -97,7 +97,7 @@
           </p>
         </li>
         <li>
-          <h5>Babel melakukan injecting helpers ke setiap file dan membuat code menjadi besar</h5>
+          <h4>Babel melakukan injecting helpers ke setiap file dan membuat code menjadi besar</h4>
           <p>
             Babel menggunakan helpers yang paling minim untuk fungsi yang digunakan pada umumnya.
             Secara default, ini akan ditambahkan pada setiap file yang membutuhkannya.
@@ -107,14 +107,14 @@
           <pre id="pre-webpack-3"></pre>
         </li>
         <li>
-          <h5>Menerima pesan: 'The node API for babel has been moved to babel-core'</h5>
+          <h4>Menerima pesan: 'The node API for babel has been moved to babel-core'</h4>
           <p>
             Jika anda menerima pesan seperti ini, itu menandakan bahwa anda telah menginstall babel dan menggunakan <i>short notation loader</i> pada konfigurasi webpack.
             Webpack kemudian mencoba untuk mengeload package babel. Untuk memperbaikinya, anda harus melakukan uninstall pada package babel dan menginstall <code>babel-cli</code> atau <code>babel-core</code>.
           </p>
         </li>
         <li>
-          <h5>Customized Loader</h5>
+          <h4>Customized Loader</h4>
           <p>
             <code>babel-loader</code> mengekspos sebuah loader-builder utility untuk membantu user menambahkan penanganan pada konfigurasi babel untuk setiap file yang diprosesnya.
             Method <code>.custom</code> dapat menerima callback yang akan dipanggil dengan <code>instance loader</code> dari babel.

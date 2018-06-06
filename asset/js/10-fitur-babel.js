@@ -1,4 +1,6 @@
 document.getElementById('pre-es6-1').innerHTML = convertHtmlToText(`
+// ES6
+
 this.nums.forEach((i) => {
   if (v % 5 === 0)
     this.nomors.push(i)
@@ -6,6 +8,8 @@ this.nums.forEach((i) => {
 `)
 
 document.getElementById('pre-es5-1').innerHTML = convertHtmlToText(`
+// ES5
+
 var _this = this;
 this.nomor.forEach(function (i) {
   if (v % 5 === 0)
@@ -14,6 +18,8 @@ this.nomor.forEach(function (i) {
 `)
 
 document.getElementById('pre-es6-2').innerHTML = convertHtmlToText(`
+// ES6
+
 "use strict";
 
 class Mobil {
@@ -38,6 +44,8 @@ class Mobil {
 `)
 
 document.getElementById('pre-es5-2').innerHTML = convertHtmlToText(`
+// ES5
+
 "use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -74,6 +82,8 @@ mobilSedan.bunyikanKlakson();
 `)
 
 document.getElementById('pre-es6-3').innerHTML = convertHtmlToText(`
+// ES6
+
 var daftarNilai = new Map();
 daftarNilai.set('Solid Snake', 60);
 daftarNilai.set('Liquid Snake', 70);
@@ -84,6 +94,8 @@ for (var[nama, nilai] of daftarNilai) {
 `)
 
 document.getElementById('pre-es5-3').innerHTML = convertHtmlToText(`
+// ES5
+
 'use strict';
 
 var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
@@ -121,6 +133,8 @@ try {
 `)
 
 document.getElementById('pre-es6-4').innerHTML = convertHtmlToText(`
+// ES6
+
 function getLaptop(make, model, year) {
   return {
     make,
@@ -133,6 +147,8 @@ getLaptop("Apple", "MacBook", "2015");
 `)
 
 document.getElementById('pre-es5-4').innerHTML = convertHtmlToText(`
+// ES5
+
 "use strict";
 
 function getLaptop(make, model, year) {
@@ -147,6 +163,8 @@ getLaptop("Apple", "MacBook", "2015");
 `)
 
 document.getElementById('pre-es6-5').innerHTML = convertHtmlToText(`
+// ES6
+
 function getLaptop(make, model, year) {
   return{
     sayModel() {
@@ -159,6 +177,8 @@ getLaptop("Apple", "MacBook", "2015").sayModel();
 `)
 
 document.getElementById('pre-es5-5').innerHTML = convertHtmlToText(`
+// ES5
+
 "use strict";
 
 function getLaptop(make, model, year) {
@@ -173,6 +193,8 @@ getLaptop("Apple", "MacBook", "2015").sayModel();
 `)
 
 document.getElementById('pre-es6-6').innerHTML = convertHtmlToText(`
+// ES6
+
 var name = "make";
 var i = 0;
 
@@ -188,6 +210,8 @@ console.log(laptop.make3);
 `)
 
 document.getElementById('pre-es5-6').innerHTML = convertHtmlToText(`
+// ES5
+
 "use strict";
 
 var _laptop;
@@ -205,11 +229,15 @@ console.log(laptop.make3);
 `)
 
 document.getElementById('pre-es6-7').innerHTML = convertHtmlToText(`
+// ES6
+
 let nama = "Billy";
 alert(\`nama saya adalah \${nama} hai semuanya??\`);
 `)
 
 document.getElementById('pre-es5-7').innerHTML = convertHtmlToText(`
+// ES5
+
 "use strict";
 
 var nama = "Billy";

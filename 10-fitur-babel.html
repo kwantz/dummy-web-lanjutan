@@ -4,6 +4,36 @@
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="asset/css/index.css" rel="stylesheet">
+    <style>
+      pre {
+        width: 45% !important;
+        display: inline-block !important;
+      }
+      pre:nth-child(1),
+      pre:nth-child(2) {
+        height: 120px;
+      }
+      pre:nth-child(3),
+      pre:nth-child(4),
+      pre:nth-child(5),
+      pre:nth-child(6) {
+        height: 350px;
+      }
+      pre:nth-child(7),
+      pre:nth-child(8),
+      pre:nth-child(9),
+      pre:nth-child(10) {
+        height: 210px;
+      }
+      pre:nth-child(11),
+      pre:nth-child(12) {
+        height: 255px;
+      }
+      pre:nth-child(13),
+      pre:nth-child(14) {
+        height: 105px;
+      }
+    </style>
   </head>
   <body>
     <ol id="menu">
@@ -55,15 +85,83 @@
     </ol>
 
     <div id="content">
-      <h3>10 .Fitur Babel</h3>
+      <h3>10. Fitur Babel</h3>
 
       <h4>Arrow Function</h4>
       <p>
         arrow function (<code>=></code>) membantu dalam mendeklarasikan async function secara lebih singkat lagi dan memang ada saatnya dimana kita benar-benar harus memakai arrow function.
         Dengan menggunakan arrow function, penulisan syntax seperti forEach ataupun fungsi map() akan menjadi semakin mudah dan simpel.
       </p>
-      <pre id="pre-es6-1"></pre>
-      <pre id="pre-es5-1"></pre>
+      <pre id="pre-es6-1" style="height: 120px;"></pre>
+      <pre id="pre-es5-1" style="height: 120px;"></pre>
+
+      <h4>Class</h4>
+      <pre id="pre-es6-2" style="height: 350px;"></pre>
+      <pre id="pre-es5-2" style="height: 350px;"></pre>
+      <p>Dari kode program diatas yang perlu diperhatikan adalah sebagai berikut:</p>
+      <ol>
+        <li>
+          Pentingnya meletakan <code>'use strict'</code> di line 1, karena jika anda menjalankan program ini di web browser Chrome ataupun
+          yang berbasis webkit (NodeJS juga berbasis webkit), fitur-fitur ES6 saat ini belum dapat berjalan tanpa keyword <code>'use strict'</code> ini.
+        </li>
+        <li>
+          Pendefinisian variable yang akan digunakan dalam lingkup Class (this...) diinisialisasikan di dalam constructor.
+          Pada saat ini ES6 tidak mendukung pendefinisian variable (global terhadap Class) diluar method.
+        </li>
+      </ol>
+
+      <h4>Map + Set + WeakMap + WeakSet</h4>
+      <pre id="pre-es6-3" style="height: 350px;"></pre>
+      <pre id="pre-es5-3" style="height: 350px;"></pre>
+
+      <h4>Enchanced Object Literals</h4>
+      <p>
+        Object Literal memudahkan dalam membuat object dengan cepat dan mudah.
+        Untuk membuat object, hanya cukup menggunakan daftar kunci: value pairs
+        yang dipisahkan oleh koma. Pada ES6, terdapat 3 hal dalam deklarasi objek literal:
+      </p>
+      <ol>
+        <li>sintaks singkatan untuk menginisialisasi properti dari variable.</li>
+        <li>sintaks singkatan untuk mendefinisikan metode fungsi.</li>
+        <li>kemampuan untuk menghitung nama properti dalam definisi literal object.</li>
+      </ol>
+      <pre id="pre-es6-4" style="height: 210px;"></pre>
+      <pre id="pre-es5-4" style="height: 210px;"></pre>
+      <p>
+        pada contoh diatas, kita membuat sebuah function <code>getLaptop</code>, disini kita
+        membuat function untuk memudahkan pass variabelnya. Jadi dapat kita lihat apabila
+        menggunakan ES5, maka object yang dikembalikan dibuat menggunakan literal object.
+        Properti object ini dibuat dengan menetapkan nilai parameter yang dilewatkan ke
+        coressponding keynya. Dan pada ES5, dapat kita lihat bahwa ada perulangan. Dan pada ES6, dia menghapus semua perulangan itu.
+        Apa yang terjadi pada ES6 adalah ia memeriksa apakah property keynya memiliki nama variabel yang sesuai dan kemudian menetapkan
+        nilai variabel tersebut kedalam propertynya. Perhatikan bahwa jika tidak ada variable yang memiliki nama yang sama dengan property key
+        yang ditentukan, maka akan terjadi error.
+      </p>
+      <pre id="pre-es6-5" style="height: 210px;"></pre>
+      <pre id="pre-es5-5" style="height: 210px;"></pre>
+      <p>pada contoh diatas, kita tidak memerlukan function untuk mendefine sebuah method.</p>
+      <pre id="pre-es6-6" style="height: 255px;"></pre>
+      <pre id="pre-es5-6" style="height: 255px;"></pre>
+      <p>
+        pada contoh diatas, dapat dilihat bahwa value dari variabel <code>'name'</code> adalah
+        <code>'make'</code>, namun disini <code>'make'</code> juga digunakan sebagai nama property,
+        sehingga kita dapat mengakses property menggunakan <code>'laptop.make'</code>. Dan pada contoh
+        diatas juga, value dari <code>'name'</code> dan <code>'i'</code> digabung untuk menghasilkan
+        sebuah nama property.
+      </p>
+
+      <h4>Template String</h4>
+      <pre id="pre-es6-7" style="height: 105px;"></pre>
+      <pre id="pre-es5-7" style="height: 105px;"></pre>
+      <p>
+        Pada contoh diatas, dapat dilihat bahwa disini saya mempunyai sebuah variable dengan nilai <code>Billy</code>,
+        lalu saya ingin mencetaknya kedalam sebuah string pada pesan alert, maka jika ES5 kita harus memisahkan dengan
+        plus + untuk menyisipkan variable tersebut, lalu ketika ingin menyambungkan dengan string lagi, maka gunakan tanda
+        plus + lagi dengan string selanjutnya.
+      </p>
+      <p>
+        Pada ES6, kita hanya perlu menggunakan backtick pada tombol keyboad lalu untuk menyisipkan variable nama tersebut menggunakan <code>${}</code>.
+      </p>
     </div>
   </body>
 
